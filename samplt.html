@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhavesh B Lohar - Portfolio</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif; /* Changed font */
+            margin: 0;
+            background: linear-gradient(135deg, #000000, #000000); /* Electric blue gradient */
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.6;
+            animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Softer shadow */
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        nav a:hover {
+            color: #1c4c74; /* Pink accent */
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 20px auto;
+            display: block;
+            animation: fadeIn 1s ease-in-out, pulse 2s infinite ease-in-out;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            animation: fadeInUp 1s ease-in-out;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            animation: fadeInUp 1.2s ease-in-out;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+        }
+
+        h3 {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            animation: fadeInUp 1.4s ease-in-out;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.7;
+            animation: fadeInUp 1.6s ease-in-out;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+        }
+        .p1 {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+            animation: fadeInUp 1.2s ease-in-out;
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 600px;
+            margin: 30px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .slide {
+            display: none;
+            animation: slideFade 1s ease-in-out;
+        }
+
+        .slide img {
+            width: 100%;
+            display: block;
+        }
+
+        .skill-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+        .skill-box {
+            border: 2px solid rgba(255, 255, 255, 0.3); /* Thicker border */
+            padding: 30px;
+            width: 250px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3); /* Darker background */
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+        }
+
+        .skill-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+            color: #0d09cc; /* Pink accent */
+        }
+
+        .skill-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .skill-description {
+            font-size: 16px;
+            color: #ccc;
+        }
+
+        .project {
+            margin: 30px auto;
+            padding: 25px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.3); /* Darker background */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+            max-width: 800px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+/* --- Project Styles --- */
+.project-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.project {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 30px;
+    width: 250px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.project p {
+    font-size: 0.9em;
+    color: #ccc;
+}
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+        }
+
+        .project img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .certificate {
+            margin: 30px auto;
+            padding: 25px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.3); /* Darker background */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+            max-width: 800px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+/* --- Certificate Styles --- */
+
+.certificate-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.certificate {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 30px;
+    width: 250px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.certificate img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.certificate h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.certificate p {
+    font-size: 0.9em;
+    color: #ccc;
+}
+        .certificate:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+        }
+
+        .certificate img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-links {
+    /* position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%); */
+    display: flex; /* Changed to flex for proper alignment */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 10px 20px; /* Reduced padding for a cleaner look */
+    background: rgba(58, 57, 57, 0.3);
+    border-radius: 20px; /* Optional: Rounded corners for the container */
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+.social-links a {
+    margin: 0 10px; /* Reduced margin for closer icons */
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+}
+
+.social-links img {
+    width: 35px; /* Slightly smaller icons */
+    height: 35px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly reduced shadow */
+}
+        #contact {
+            background: rgba(0, 0, 0, 0.3); /* Darker background */
+            padding: 40px 20px;
+            border-radius: 30px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+            max-width: 1900px;
+            margin: 30px auto;
+        }
+
+        #contact form {
+            display: auto;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #contact input,
+        #contact textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        #contact input:focus,
+        #contact textarea:focus {
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+        }
+
+        #contact button {
+            background: #672bd6; /* Pink accent */
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        #contact button:hover {
+            background: #0b0161; /* Darker pink */
+            transform: scale(1.05);
+        }
+
+        .button-container {
+            display: auto;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes slideFade {
+            from {
+                opacity: 0.4;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="hero">
+        <div class="hero-content">
+            <img src="IMG_7747.JPG" alt="Your Image" class="profile-image">
+            <h1>Bhavesh B Lohar</h1>
+            <h2>B-Tech</h2>
+            <h2>Artificial Intelligence & Machine Learning Engineer</h2>
+            <h3>SVKM NMIMS MPSTME UNIVERSITY,SHIRPUR</h3>
+            <p>Welcome to my portfolio...!</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="hero-content">
+            <h2>About Me</h2>
+            <h3>C++ || Python || DSA || AI&ML || Full Stack developer ||</h3>
+            <h4>Artificial Intelligence & Machine Learning Engineering Student @NMIMS Shirpur</h4>
+            <p>"I am a passionate and driven Artificial Intelligence & Machine Learning Engineering student at SVKM NMIMS MPSTME University, Shirpur, 
+                dedicated to exploring the transformative power of technology. My academic journey has equipped me with a robust foundation in 
+                fundamental programming languages such as C++ and Python, enabling me to tackle complex algorithmic challenges and develop efficient 
+                software solutions. My proficiency extends to Data Structures and Algorithms (DSA), where I leverage both C++ and Python to design and 
+                implement optimized solutions, showcasing my commitment to efficient problem-solving.</p>
+                <a href="A_read.html" class="read-more">Read More</a>
+            <div class="slideshow-container">
+                <div class="slide">
+                    <img src="PXL_20241101_131934538.PORTRAIT.jpg" alt="Image 1">
+                </div>
+                <div class="slide">
+                    <img src="PXL_20241101_131934538.PORTRAIT~2.jpg" alt="Image 2">
+                </div>
+                <div class="slide">
+                    <img src="PXL_20241101_143904511.PORTRAIT~2.jpg" alt="Image 3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="hero-content">
+            <h2>Skills</h2>
+            <p>"Service's we Provide"</p>
+            <div class="skill-container">
+                <div class="skill-box">
+                    <div class="skill-icon"><i class="fas fa-code"></i></div>
+                    <div class="skill-title">C & C++</div>
+                    <div class="skill-description">Proficient in C and C++ programming, with a strong foundation in software development principles.</div>
+                    <a href="C.html" class="read-more">Read More</a>
+                </div>
+                <div class="skill-box">
+                    <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
+                    <div class="skill-title">Python</div>
+                    <div class="skill-description">Skilled in Python programming, with experience in scripting, automation, and data analysis.</div>
+                    <a href="python.html" class="read-more">Read More</a>
+                </div>
+                <div class="skill-box">
+                    <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="skill-title">DSA (C++ & Python)</div>
+                    <div class="skill-description">Expertise in Data Structures and Algorithms, implemented in both C++ and Python.</div>
+                    <a href="DSA.html" class="read-more">Read More</a>
+                </div>
+                <div class="skill-box">
+                    <div class="skill-icon"><i class="fas fa-globe"></i></div>
+                    <div class="skill-title">Full Stack Development</div>
+                    <div class="skill-description">Experience in Full Stack Development, building web applications from front to back.</div>
+                    <a href="webDevelopment.html" class="read-more">Read More</a>
+                </div>
+                <div class="skill-box">
+                    <div class="skill-icon"><i class="fas fa-brain"></i></div>
+                    <div class="skill-title">NLP-LLM</div>
+                    <div class="skill-description">Knowledge of Natural Language Processing and Large Language Models, developing intelligent applications.</div>
+                    <a href="NLP-LLM.html" class="read-more">Read More</a>
+                </div>
+                <div class="skill-box">
+                    <div class="skill-icon
+                    "><i class="fas fa-database"></i></div>
+                    <div class="skill-title">MySQL & PLSQL</div>
+                    <div class="skill-description">Proficient in SQL programming, with experience in MySQL and PLSQL databases.</div>
+                    <a href="MySQL&PLSQL.html" class="read-more">Read More</a>
+                </div>
+            </div>
+
+            <h2>Soft Skills</h2>
+            <p>"Adaptivity"</p>
+            <div class="skill-container">
+                <div class="skill-box">
+                    <div class="skill-icon
+                    "><i class="fas fa-users"></i></div>
+                    <div class="skill-title">Communication</div>
+                    <div class="skill-description">Strong communication skills, with experience in public speaking, presentations, and technical writing.</div>
+                    <a href="communication.html" class="read-more">Read More</a>
+                </div>
+                <div class="skill-box">
+                    <div class="skill-icon
+                    "><i class="fas fa-users"></i></div>
+                    <div class="skill-title">Leadership</div>
+                    <div class="skill-description">Leadership qualities, with experience in team management, project coordination, and decision-making.</div>
+                    <a href="leadership.html" class="read-more">Read More</a>
+                </div>
+                <div class="skill-box">
+                    <div class="skill-icon
+                    "><i class="fas fa-users"></i></div>
+                    <div class="skill-title">Problem-Solving</div>
+                    <div class="skill-description">Creative problem-solving skills, with experience in troubleshooting, debugging, and critical thinking.</div>
+                    <a href="problemSolving.html" class="read-more">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="hero-content">
+            <h2>Projects</h2>
+            <div class="project-container">
+                <div class="project">
+                    <h3>Garage-Map</h3>
+                    <p>Project description goes here...</p>
+                    <img src="garage.jpg" alt="Project 1">
+                </div>
+                <div class="project">
+                    <h3>My Book</h3>
+                    <p>Project description goes here...</p>
+                    <img src="my book.png" alt="Project 2">
+                </div>
+                <div class="project">
+                    <h3>Hospital Management System</h3>
+                    <p>Project description goes here...</p>
+                    <img src="download.jpg" alt="Project 3">
+                </div>
+                <div class="project">
+                    <h3>Flight Reservation System</h3>
+                    <p>Project description goes here...</p>
+                    <img src="floght.jpg" alt="Project 4">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="certificates">
+        <div class="hero-content">
+            <h2>Certificates</h2>
+            <div class="certificate-container">
+                <div class="certificate">
+                    <h3>Certificate Title 1</h3>
+                    <p>Certificate description goes here...</p>
+                    <img src="codsoft.png" alt="Certificate 1">
+                </div>
+                <div class="certificate">
+                    <h3>Certificate Title 7</h3>
+                    <p>Certificate description goes here...</p>
+                    <img src="nextech.png" alt="Certificate 7">
+                </div>
+                <div class="certificate">
+                    <h3>Certificate Title 2</h3>
+                    <p>Certificate description goes here...</p>
+                    <img src="ARVR.png" alt="Certificate 2">
+                </div>
+                <div class="certificate">
+                    <h3>Certificate Title 3</h3>
+                    <p>Certificate description goes here...</p>
+                    <img src="chatgpt.png" alt="Certificate 3">
+                </div>
+                <div class="certificate">
+                    <h3>Certificate Title 4</h3>
+                    <p>Certificate description goes here...</p>
+                    <img src="SQL.png" alt="Certificate 4">
+                </div>
+                <div class="certificate">
+                    <h3>Certificate Title 5</h3>
+                    <p>Certificate description goes here...</p>
+                    <img src="teach.png" alt="Certificate 5">
+                </div>
+                <div class="certificate">
+                    <h3>Certificate Title 6</h3>
+                    <p>Certificate description goes here...</p>
+                    <img src="TEACH1.png" alt="Certificate 6">
+                </div>
+                <div class="certificate">
+                    <h3>Certificate Title 7</h3>
+                    <p>Certificate description goes here...</p>
+                    <img src="UIUX.png" alt="Certificate 7">
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-content">
+            <h2>Contact Me</h2>
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+
+                 <div class="button-container">
+                    <button type="submit">Send Message</button>
+                    <h2>Social Links</h2>
+                     <div class="social-links">
+                        <a href="https://instagram.com" target="_blank"><img src="instagram-removebg-preview.png" alt="Instagram"></a>
+                        <a href="https://facebook.com" target="_blank"><img src="facebook-removebg-preview.png" alt="Facebook"></a>
+                        <a href="https://linkedin.com" target="_blank"><img src="linkdil-removebg-preview.png" alt="LinkedIn"></a>
+                        <a href="mailto:bhaveshblohar25@gmail.com"><img src="gmail-removebg-preview.png" alt="Gmail"></a>
+                        <a href="https://github.com/bblohar" target="_blank"><img src="icons8-github-30.png" alt="GitHub"></a>
+                    </div>
+                </div>
+            </form>
+            
+    </section>
+
+    <script>
+        const form = document.getElementById('contact-form');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = form.name.value;
+            const email = form.email.value;
+            const message = form.message.value;
+
+            const mailtoLink = `mailto:bhaveshblohar25@gmail.com?subject=Contact from Portfolio&body=Name: ${name}%0D%0AEmail: ${email}%0D%0AMessage: ${message}`;
+
+            window.location.href = mailtoLink;
+
+            form.reset();
+        });
+    </script>
+</body>
+</html>

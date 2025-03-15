@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Bhavesh B Lohar</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif; /* Changed font */
+            margin: 0;
+            background: linear-gradient(135deg, #000000, #000000); /* Electric blue gradient */
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.6;
+            animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Softer shadow */
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        nav a:hover {
+            color: #1c4c74; /* Pink accent */
+            transform: translateY(-2px);
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 10px;
+            animation: fadeInUp 1s ease-in-out;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+        .about-container {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .about-container h2 {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .about-container p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+            animation: fadeInUp 1.2s ease-in-out;
+        }
+
+        .about-container ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+            animation: fadeInUp 1.4s ease-in-out;
+        }
+
+        .about-container li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+
+        .about-container li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #672bd6;
+        }
+
+        .about-container .highlight {
+            color: #672bd6;
+            font-weight: 600;
+        }
+        .p1 {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+            animation: fadeInUp 1.2s ease-in-out;
+        }
+        .p2 {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+            animation: fadeInUp 1.2s ease-in-out;
+        }
+        .p3 {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+            animation: fadeInUp 1.2s ease-in-out;
+        }
+        .p4 {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+            animation: fadeInUp 1.2s ease-in-out;
+        }
+
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="hero">Home</a></li>
+            <li><a href="about">About</a></li>
+            <li><a href="skills">Skills</a></li>
+            <li><a href="projects">Projects</a></li>
+            <li><a href="certificates">Certificates</a></li>
+            <li><a href="contact">Contact</a></li>
+        </ul>
+    </nav>
+    <h1>About Me</h1>
+    <p1>"I am a passionate and driven Artificial Intelligence & Machine Learning Engineering student at SVKM NMIMS MPSTME University, Shirpur, dedicated to exploring the transformative power of technology.
+         My academic journey has equipped me with a robust foundation in fundamental programming languages such as C++ and Python, enabling me to tackle complex algorithmic challenges and develop efficient software solutions. 
+         My proficiency extends to Data Structures and Algorithms (DSA), where I leverage both C++ and Python to design and implement optimized solutions, showcasing my commitment to efficient problem-solving.</p1>
+    <p2>My interest in the cutting-edge fields of AI and Machine Learning has led me to delve into advanced concepts like Deep Learning (DL) and Natural Language Processing with Large Language Models (NLP-LLM). 
+        I am particularly intrigued by the potential of AI to address real-world challenges and create positive societal impact. This passion is further fueled by my experience in Full Stack Development, 
+        where I have honed my skills in building comprehensive web applications, bridging the gap between front-end user experience and back-end functionality.</p2>
+    <p3>In addition to my technical skills, I am proficient in SQL, allowing me to effectively manage and manipulate databases, 
+        a crucial skill in today's data-driven world. My understanding of cybersecurity principles is also a significant asset, reflecting my awareness of the importance of secure and reliable systems in an increasingly interconnected digital landscape.
+
+        Beyond my technical prowess, I am a firm believer in the power of effective communication and leadership.
+         I strive to cultivate these skills through active participation in team projects and various extracurricular activities. 
+         I am a diligent and hardworking individual, committed to continuous learning and staying abreast of the latest advancements in the tech industry.
+          My creative problem-solving abilities enable me to approach challenges with innovative solutions, and I am always eager to seek industrial knowledge and apply it to practical projects.</p3>
+    <p4>As I embark on my professional journey, I am eager to leverage my skills and knowledge to contribute meaningfully to the field of Artificial Intelligence and Machine Learning.
+
+        I am excited about the prospect of collaborating with like-minded individuals and organizations to drive innovation and create impactful solutions that address the evolving needs of society.
+         I am confident that my passion, dedication, and technical acumen will enable me to make a positive difference in the world of technology and beyond.</p4>
+</body>
+</html>
